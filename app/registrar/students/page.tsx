@@ -1,3 +1,9 @@
+import StudentTable from "../_components/student-table";
+
 export default function Page() {
-  return <div>students</div>;
+  return (
+    <div>
+      <StudentTable />
+    </div>
+  );
 }

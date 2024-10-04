@@ -1,57 +1,71 @@
 "use client";
 
-import { Avatar } from "@nextui-org/react";
+import {
+  Avatar,
+  Button,
+  Divider,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+} from "@nextui-org/react";
 import Link from "next/link";
+import { FiHome, FiUsers } from "react-icons/fi";
+import { PiDotsThreeOutlineVerticalFill } from "react-icons/pi";
 
 export default function SideBar() {
   return (
-    <aside className="w-[300px] h-screen transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 hidden md:block">
-      <div className="h-16 border-b">Logo</div>
+    <aside className="w-[200px] lg:w-[300px] flex-col transition-transform -translate-x-full bg-white border-r border-gray-800 sm:translate-x-0 dark:bg-black hidden md:flex">
+      <div className="h-16 flex items-center px-4">Logo</div>
 
-      <div className="flex flex-col">
-        <div className="h-full overflow-y-auto bg-white dark:bg-gray-800">
+      <div className="flex flex-col px-4 py-2 justify-between h-full">
+        <div className=" overflow-y-auto bg-white dark:bg-black">
           <ul className="space-y-2 font-medium">
             <li>
               <Link
                 href="/registrar"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                className="flex items-center text-black rounded-lg dark:text-white hover:bg-black dark:hover:bg-black group"
               >
-                <svg
-                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 21"
-                >
-                  <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                  <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                </svg>
+                <FiHome />
                 <span className="ms-3">Home</span>
               </Link>
             </li>
             <li>
               <Link
                 href="/registrar/students"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                className="flex items-center text-black rounded-lg dark:text-white hover:bg-black dark:hover:bg-black group"
               >
-                <svg
-                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 21"
-                >
-                  <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                  <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                </svg>
+                <FiUsers />
                 <span className="ms-3">Students</span>
               </Link>
             </li>
           </ul>
         </div>
-
         <div>
-          <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+          <Divider className="my-1.5" />
+          <Dropdown
+            classNames={{ content: "lg:min-w-[270px] min-w-[170px] rounded" }}
+          >
+            <DropdownTrigger>
+              <div
+                className="flex items-center gap-2  p-2"
+                aria-expanded="false"
+              >
+                <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+
+                <label>Registrar</label>
+                <PiDotsThreeOutlineVerticalFill className="ml-auto" />
+              </div>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Static Actions">
+              <DropdownItem key="new">New file</DropdownItem>
+              <DropdownItem key="copy">Copy link</DropdownItem>
+              <DropdownItem key="edit">Edit file</DropdownItem>
+              <DropdownItem key="delete" className="text-danger" color="danger">
+                Delete file
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </div>
       </div>
     </aside>
