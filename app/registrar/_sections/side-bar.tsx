@@ -2,7 +2,6 @@
 
 import {
   Avatar,
-  Button,
   Divider,
   Dropdown,
   DropdownItem,

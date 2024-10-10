@@ -28,6 +28,8 @@ export default function NavBar() {
       onMenuOpenChange={setIsMenuOpen}
       classNames={{ wrapper: "max-w-screen-xl" }}
       isBordered
+      isBlurred={false}
+      className="z-50"
     >
       <NavbarContent>
         <NavbarMenuToggle

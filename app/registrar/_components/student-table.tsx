@@ -10,13 +10,48 @@ import {
 } from "@nextui-org/react";
 
 export default function StudentTable() {
+  const data = [
+    { name: "Tony Reichert", position: "CEO", status: "Active" },
+    { name: "Zoey Lang", position: "Technical Lead", status: "Paused" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    { name: "Jane Fisher", position: "Senior Developer", status: "Active" },
+    {
+      name: "William Howard",
+      position: "Community Manager",
+      status: "Vacation",
+    },
+  ];
   return (
     <Table
+      isHeaderSticky
+      removeWrapper
       aria-label="Example static collection table"
       classNames={{
-        wrapper: "p-0 rounded-none bg-transparent",
-        th: "bg-transparent border-b border-gray-800",
+        wrapper:
+          "p-0 rounded-sm bg-black after:bg-foreground after:text-background text-background ",
+        th: "  rounded-none first:rounded-none last:rounded-none ",
         tbody: "divide-y divide-gray-800",
+        base: "h-[calc(100vh-110px)] overflow-y-auto",
       }}
     >
       <TableHeader>
@@ -26,26 +61,13 @@ export default function StudentTable() {
       </TableHeader>
 
       <TableBody>
-        <TableRow key="1">
-          <TableCell>Tony Reichert</TableCell>
-          <TableCell>CEO</TableCell>
-          <TableCell>Active</TableCell>
-        </TableRow>
-        <TableRow key="2">
-          <TableCell>Zoey Lang</TableCell>
-          <TableCell>Technical Lead</TableCell>
-          <TableCell>Paused</TableCell>
-        </TableRow>
-        <TableRow key="3">
-          <TableCell>Jane Fisher</TableCell>
-          <TableCell>Senior Developer</TableCell>
-          <TableCell>Active</TableCell>
-        </TableRow>
-        <TableRow key="4">
-          <TableCell>William Howard</TableCell>
-          <TableCell>Community Manager</TableCell>
-          <TableCell>Vacation</TableCell>
-        </TableRow>
+        {data.map((row, index) => (
+          <TableRow key={index}>
+            <TableCell>{row.name}</TableCell>
+            <TableCell>{row.position}</TableCell>
+            <TableCell>{row.status}</TableCell>
+          </TableRow>
+        ))}
       </TableBody>
     </Table>
   );
