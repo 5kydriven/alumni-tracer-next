@@ -5,9 +5,9 @@ import { FiBookmark } from "react-icons/fi";
 
 export default function JobList() {
   return (
-    <div className="w-full border">
+    <div className="w-full border p-4 rounded-lg flex flex-col gap-4">
       <div className="flex justify-between">
-        <div>
+        <div className="flex flex-col gap-2">
           <label className="text-xl flex gap-2 items-center">
             Web Designer<span className="text-sm">2 days ago</span>
           </label>
