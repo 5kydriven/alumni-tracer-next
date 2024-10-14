@@ -46,9 +46,11 @@ export default function NavBar() {
           <label>Messages</label>
         </NavbarItem>
         <NavbarItem>
-          <Button color="success" variant="flat">
-            Job board
-          </Button>
+          <Link href="/jobseeker/jobs">
+            <Button color="success" variant="flat">
+              Job board
+            </Button>
+          </Link>
         </NavbarItem>
 
         <Dropdown placement="bottom-end">
